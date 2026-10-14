@@ -4,7 +4,9 @@
 Nuxt 4 + TypeScript, frontend и backend в одном проекте.
 
 - **Figma:** https://www.figma.com/design/2veZOBASXHkRIt48uzPKp6/Untitled?node-id=1-36
-- **Demo:** https://amaya-soft-test.vercel.app · демо ошибок: `/?fail=offers`, `/?fail=purchase`, `/?fail=restore`
+- **Demo:** https://amaya-soft-test.vercel.app
+  - состояния макета без действий: `/?state=loading`, `offers-error`, `purchasing`, `purchase-error`, `restored`, `success`
+  - настоящие ошибки сервера, чтобы пройти сценарий: `/?fail=offers`, `/?fail=purchase`, `/?fail=restore`
 
 ## Запуск локально
 
@@ -16,8 +18,8 @@ npm run dev          # http://localhost:3000
 БД настраивать не нужно: без `DATABASE_URL` в dev используется [PGlite](https://pglite.dev) — Postgres в WASM, данные в `.data/`.
 Чтобы работать с Neon, скопируйте `.env.example` → `.env`. Проверки: `npm run lint`, `npm run typecheck`.
 
-Dev-инструменты для сверки с макетом: `/?state=loading|offers-error|purchasing|purchase-error|restored|success`
-фиксирует экран в нужном состоянии, `&overlay` накладывает PNG из Figma с прозрачностью 50%.
+Только в dev: `&overlay` накладывает PNG из Figma с прозрачностью 50% поверх нужного состояния,
+например `/?state=purchasing&overlay`.
 
 ## Где что лежит
 

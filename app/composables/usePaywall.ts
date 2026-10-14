@@ -139,21 +139,29 @@ export function usePaywall() {
     phase.value = 'idle'
   }
 
-  // Dev: ?state=... фиксирует экран в одном из состояний макета для попиксельной сверки
-  if (import.meta.dev) {
-    const state = query('state')
-    if (state === 'loading') forcedOffersView.value = 'loading'
-    if (state === 'offers-error') forcedOffersView.value = 'error'
-    if (state === 'purchasing') phase.value = 'purchasing'
-    if (state === 'purchase-error') {
+  // Демо: ?state=... открывает экран сразу в одном из состояний макета.
+  // Меняет только отображение — запросов к API и записей в БД не делает.
+  switch (query('state')) {
+    case 'loading':
+      forcedOffersView.value = 'loading'
+      break
+    case 'offers-error':
+      forcedOffersView.value = 'error'
+      break
+    case 'purchasing':
+      phase.value = 'purchasing'
+      break
+    case 'purchase-error':
       purchaseFailed.value = true
       banner.value = { type: 'error', text: 'Не удалось оформить покупку' }
-    }
-    if (state === 'restored') banner.value = { type: 'info', text: 'Покупки не найдены' }
-    if (state === 'success') {
+      break
+    case 'restored':
+      banner.value = { type: 'info', text: 'Покупки не найдены' }
+      break
+    case 'success':
       success.value = { shortId: '7F3A2C', offerTitle: 'Год', restored: false }
       phase.value = 'success'
-    }
+      break
   }
 
   return {
