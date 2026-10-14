@@ -14,7 +14,7 @@ const features: { icon: IconName, text: string }[] = [
       class="features__row"
     >
       <span class="features__icon">
-        <AppIcon
+        <UiIcon
           :name="feature.icon"
           :size="16"
         />

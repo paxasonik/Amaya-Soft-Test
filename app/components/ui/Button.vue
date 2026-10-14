@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { CtaState } from '~/composables/usePaywall'
-
 defineProps<{
-  state: CtaState
+  state: 'default' | 'disabled' | 'loading'
   label: string
 }>()
 </script>

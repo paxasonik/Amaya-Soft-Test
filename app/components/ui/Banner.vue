@@ -11,7 +11,7 @@ defineProps<{
     :class="`banner--${type}`"
     :role="type === 'error' ? 'alert' : 'status'"
   >
-    <AppIcon
+    <UiIcon
       :name="type === 'error' ? 'circle-alert' : 'info'"
       :size="20"
       class="banner__icon"

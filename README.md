@@ -23,7 +23,7 @@ Dev-инструменты для сверки с макетом: `/?state=loadi
 
 | | |
 |---|---|
-| Frontend | `app/pages/index.vue`, `app/components/`, логика состояний — `app/composables/usePaywall.ts` |
+| Frontend | страница `app/pages/index.vue`; компоненты `app/components/ui/` (примитивы), `paywall/` (блоки экрана), `dev/` (сверка с макетом); логика состояний — `app/composables/usePaywall.ts` |
 | Server routes | `server/api/offers.get.ts`, `purchase.post.ts`, `restore.post.ts` |
 | БД | схема `server/db/schema.ts`, подключение `server/utils/db.ts` |
 | Общее | `shared/` — типы и форматирование цены для клиента и сервера |

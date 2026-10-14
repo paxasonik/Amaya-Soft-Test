@@ -5,7 +5,7 @@
     aria-label="Закрыть"
   >
     <span class="close-button__circle">
-      <AppIcon
+      <UiIcon
         name="x"
         :size="20"
       />

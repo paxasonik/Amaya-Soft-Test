@@ -6,9 +6,9 @@ defineEmits<{ play: [] }>()
 </script>
 
 <template>
-  <ScreenLayout center>
+  <UiScreen center>
     <div class="success-icon">
-      <AppIcon
+      <UiIcon
         name="check"
         :size="56"
         :stroke="3"
@@ -31,13 +31,13 @@ defineEmits<{ play: [] }>()
     </div>
 
     <template #footer>
-      <CtaButton
+      <UiButton
         state="default"
         label="Начать играть"
         @click="$emit('play')"
       />
     </template>
-  </ScreenLayout>
+  </UiScreen>
 </template>
 
 <style scoped>
