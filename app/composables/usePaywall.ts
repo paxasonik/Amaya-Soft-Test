@@ -129,6 +129,16 @@ export function usePaywall() {
     phase.value = 'idle'
   }
 
+  // Во webview нативное приложение закрывает paywall и открывает контент.
+  // В обычном браузере (демо) хоста нет — возвращаем экран в начало, чтобы сценарий можно было пройти заново.
+  function play() {
+    if (postToHost('play')) return
+    success.value = null
+    banner.value = null
+    purchaseFailed.value = false
+    phase.value = 'idle'
+  }
+
   // Dev: ?state=... фиксирует экран в одном из состояний макета для попиксельной сверки
   if (import.meta.dev) {
     const state = query('state')
@@ -161,6 +171,6 @@ export function usePaywall() {
     purchase,
     restore,
     close: () => postToHost('close'),
-    play: () => postToHost('play'),
+    play,
   }
 }
