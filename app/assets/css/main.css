@@ -1,0 +1,105 @@
+/* Токены 1:1 со стилями Figma (docs/design-spec.md) */
+:root {
+  --color-bg-page: #F5F3FF;
+  --color-bg-surface: #FFFFFF;
+  --color-primary: #6C4CF5;
+  --color-primary-pressed: #5835E8;
+  --color-primary-disabled: #B9AAFA;
+  --color-primary-soft: #EEEAFE;
+  --color-accent-amber: #FFB020;
+  --color-accent-star: #FFC83D;
+  --color-text-primary: #1F1A3D;
+  --color-text-secondary: #6B6785;
+  --color-text-on-primary: #FFFFFF;
+  --color-border: #E4E0F5;
+  --color-border-radio: #CFC9E8;
+  --color-skeleton: #E9E5F8;
+  --color-success: #1FA971;
+  --color-success-soft: #E3F7EF;
+  --color-error: #E5484D;
+  --color-error-soft: #FDECEC;
+  --color-error-text: #B4232A;
+
+  --shadow-selected: 0 8px 24px rgb(108 76 245 / 0.16);
+  --shadow-cta: 0 8px 20px rgb(108 76 245 / 0.3);
+  --shadow-footer: 0 -4px 24px rgb(31 26 61 / 0.08);
+
+  --font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--color-bg-page);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Text styles */
+.t-title { font-weight: 800; font-size: 28px; line-height: 34px; }
+.t-body { font-weight: 500; font-size: 16px; line-height: 22px; }
+.t-feature { font-weight: 600; font-size: 15px; line-height: 20px; }
+.t-card-title { font-weight: 700; font-size: 17px; line-height: 22px; }
+.t-price { font-weight: 800; font-size: 20px; line-height: 24px; }
+.t-caption { font-weight: 500; font-size: 13px; line-height: 18px; }
+.t-caption-strong { font-weight: 700; font-size: 13px; line-height: 18px; }
+.t-badge { font-weight: 800; font-size: 11px; line-height: 14px; text-transform: uppercase; }
+.t-button { font-weight: 800; font-size: 18px; line-height: 24px; }
+.t-link { font-weight: 700; font-size: 15px; line-height: 20px; }
+.t-banner { font-weight: 600; font-size: 14px; line-height: 20px; }
+.t-legal { font-weight: 500; font-size: 12px; line-height: 16px; }
+
+.text-secondary { color: var(--color-text-secondary); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
